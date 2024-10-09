@@ -40,6 +40,7 @@ bin/
 
 ### Mac OS ###
 .DS_Stores
+.DS_Store
 
 ### Private Files ###
 /src/main/java/org/java/kkohi/Token.java
