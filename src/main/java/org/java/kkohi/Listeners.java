@@ -1,7 +1,6 @@
 package org.java.kkohi;
 
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -17,11 +16,6 @@ public class Listeners extends ListenerAdapter {
         // Set status
         Activity activity = Activity.customStatus("Brewing ideas.");
         event.getJDA().getPresence().setActivity(activity);
-
-        // Upsert Commands
-        Guild kkohiGuild = event.getJDA().getGuildById(1281477031003164725L);
-        assert kkohiGuild != null;
-        kkohiGuild.upsertCommand("ping", "Returns 'Pong!' with the ping in `ms`.").queue();
 
         // Notify console
         System.out.println("Kkohi now online!"); // Print status.

@@ -1,16 +1,30 @@
 package org.java.kkohi.commands;
 
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.requests.restaction.interactions.ReplyCallbackAction;
-import org.jetbrains.annotations.NotNull;
-import java.time.temporal.ChronoUnit;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import org.java.kkohi.ICommand;
 
-public class Ping extends ListenerAdapter {
+import java.util.List;
+
+public class Ping implements ICommand {
+
     @Override
-    public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
-        if(!event.getName().equals("ping")) return;
+    public String getName() {
+        return "ping";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Returns Kkohi ping in milliseconds.";
+    }
+
+    @Override
+    public List<OptionData> getOptions() {
+        return List.of();
+    }
+
+    @Override
+    public void execute(SlashCommandInteractionEvent event) {
         event.reply("Pinging... " + event.getJDA().getGatewayPing() + "ms!").queue();
-        super.onSlashCommandInteraction(event);
     }
 }
