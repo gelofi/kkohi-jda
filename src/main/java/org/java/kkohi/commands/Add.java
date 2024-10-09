@@ -34,14 +34,18 @@ public class Add implements ICommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        OptionMapping num1 = event.getOption("num1");
-        assert num1 != null;
-        int augend = num1.getAsInt();
-        OptionMapping num2 = event.getOption("num2");
-        assert num2 != null;
-        int addend = num2.getAsInt();
+        try {
+            OptionMapping num1 = event.getOption("augend");
+            assert num1 != null;
+            int augend = num1.getAsInt();
+            OptionMapping num2 = event.getOption("addend");
+            assert num2 != null;
+            int addend = num2.getAsInt();
 
-        int result = augend + addend;
-        event.reply(augend + addend + " = " + result).queue();
+            int result = augend + addend;
+            event.reply(augend +" + " + addend + " = " + result).queue();
+        } catch (Exception e){
+            event.reply("An error occured. Did you insert correct values?").queue();
+        }
     }
 }
