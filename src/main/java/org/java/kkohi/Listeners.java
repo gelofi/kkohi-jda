@@ -14,7 +14,7 @@ public class Listeners extends ListenerAdapter {
     @Override
     public void onReady(@NotNull ReadyEvent event) {
         // Set status
-        Activity activity = Activity.customStatus("Brewing ideas.");
+        Activity activity = Activity.customStatus("brewing new ideas");
         event.getJDA().getPresence().setActivity(activity);
 
         // Notify console

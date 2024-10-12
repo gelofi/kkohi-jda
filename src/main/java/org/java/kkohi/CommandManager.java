@@ -15,17 +15,22 @@ public class CommandManager extends ListenerAdapter {
     // Upsert the Command in the Guilds (This updates the # of commands)
     @Override
     public void onReady(@NotNull ReadyEvent event){
+        int serverCount = 0;
+        int commandCount = 0;
         for(Guild guild : event.getJDA().getGuilds()){
             for(ICommand command : commands) {
                 if (command.getOptions() == null) {
                     guild.upsertCommand(command.getName(), command.getDescription()).queue();
-                    System.out.println(command.getName() + " upserted on " + guild.getName());
                 } else {
+                    commandCount++;
                     guild.upsertCommand(command.getName(), command.getDescription()).addOptions(command.getOptions()).queue();
-                    System.out.println(command.getName() + " upserted on " + guild.getName());
+
                 }
             }
+            serverCount++;
+            commandCount = commandCount / serverCount;
         }
+        System.out.println(commandCount + " commands upserted on all " + serverCount + " servers.");
     }
 
     // Call the command when using slash and execute

@@ -25,6 +25,6 @@ public class Ping implements ICommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        event.reply("Pinging... " + event.getJDA().getGatewayPing() + "ms!").queue();
+        event.reply("Ping is `" + event.getJDA().getGatewayPing() + "ms`!").queue();
     }
 }
