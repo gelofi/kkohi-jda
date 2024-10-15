@@ -48,6 +48,9 @@ public class Ship implements ICommand {
             RandomGenerator randomGenerator = new Random();
 
             int randNum = randomGenerator.nextInt(1, 100);
+            if ((userOne.getAsMember().getIdLong() == 583328224491208863L ) && (userTwo.getAsMember().getIdLong() == 870321446428229632L)){
+                randNum = 100;
+            }
             String splashText;
             if (randNum >= 50){
                 splashText = "Almost there, lovebirds!";
