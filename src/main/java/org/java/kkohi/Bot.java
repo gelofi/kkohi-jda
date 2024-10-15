@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import org.java.kkohi.commands.Arithmetic;
 import org.java.kkohi.commands.Kiss;
 import org.java.kkohi.commands.Ping;
+import org.java.kkohi.commands.Ship;
 
 public class Bot {
     public static void main(String[] args) {
@@ -20,6 +21,7 @@ public class Bot {
         // Upsert Commands
         manager.add(new Ping());
         manager.add(new Arithmetic());
+        manager.add(new Ship());
         manager.add(new Kiss());
         jda.addEventListener(manager);
     }
