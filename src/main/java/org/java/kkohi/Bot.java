@@ -4,10 +4,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
 // Import Commands
-import org.java.kkohi.commands.Arithmetic;
-import org.java.kkohi.commands.Kiss;
-import org.java.kkohi.commands.Ping;
-import org.java.kkohi.commands.Ship;
+import org.java.kkohi.commands.*;
 
 public class Bot {
     public static void main(String[] args) {
@@ -23,6 +20,9 @@ public class Bot {
         manager.add(new Arithmetic());
         manager.add(new Ship());
         manager.add(new Kiss());
+        manager.add(new Topic());
+
+        // Execute the Manager
         jda.addEventListener(manager);
     }
 }

@@ -17,6 +17,7 @@ public class CommandManager extends ListenerAdapter {
     public void onReady(@NotNull ReadyEvent event){
         int serverCount = 0;
         int commandCount = 0;
+        int finCommandCount = 0;
         for(Guild guild : event.getJDA().getGuilds()){
             for(ICommand command : commands) {
                 if (command.getOptions() == null) {
@@ -24,13 +25,12 @@ public class CommandManager extends ListenerAdapter {
                 } else {
                     commandCount++;
                     guild.upsertCommand(command.getName(), command.getDescription()).addOptions(command.getOptions()).queue();
-
                 }
             }
             serverCount++;
-            commandCount = commandCount / serverCount;
+            finCommandCount = commandCount / serverCount;
         }
-        System.out.println(commandCount + " commands upserted on all " + serverCount + " servers.");
+        System.out.println(finCommandCount + " commands upserted on all " + serverCount + " servers.");
     }
 
     // Call the command when using slash and execute
