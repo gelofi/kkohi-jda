@@ -4,7 +4,6 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.java.kkohi.ICommand;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Topic implements ICommand {
