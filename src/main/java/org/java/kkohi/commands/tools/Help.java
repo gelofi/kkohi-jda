@@ -41,12 +41,13 @@ public class Help implements ICommand {
     public void execute(@NotNull SlashCommandInteractionEvent event) {
 
         String guide = """
-                # Guide to use Kkohi
+                # Guide to use [Kkohi](https://github.com/gelofi/kkohi-jda)
                 Kkohi is your coffee-oriented bot for all-around server work!
-                Type `/` to begin using commands.""";
+                Type `/` to begin using commands.
+                To view the source-code, click Kkohi.""";
 
         EmbedBuilder builder = new EmbedBuilder()
-                .setAuthor("Kkohi 1.2.0", null, event.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Kkohi 1.2.0", "https://github.com/gelofi/kkohi-jda", event.getJDA().getSelfUser().getAvatarUrl())
                 .setColor(Color.decode("#F2CDA6"))
                 .setDescription(guide)
                 .addField("Tool Commands", fileFinder("tools"), false)
