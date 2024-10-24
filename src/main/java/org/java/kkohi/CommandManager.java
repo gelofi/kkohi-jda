@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandManager extends ListenerAdapter {
-    private final List<ICommand> commands = new ArrayList<>();
+    List<ICommand> commands = new ArrayList<>();
 
     // Upsert the Command in the Guilds (This updates the # of commands)
     @Override
