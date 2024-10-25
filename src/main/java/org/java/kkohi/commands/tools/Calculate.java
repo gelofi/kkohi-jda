@@ -37,10 +37,10 @@ public class Calculate implements ICommand {
                 .addChoice("exponentation", "^"));
         data.add(new OptionData(OptionType.INTEGER, "first_number", "The first number. This is the augend, minuend, multiplicand, dividend, or base.", true)
                 .setMinValue(1)
-                .setMaxValue(9999999L));
+                .setMaxValue(99999999L));
         data.add(new OptionData(OptionType.INTEGER, "second_number", "The second number. This is the addend, subtrahend, multiplier, divisor, or exponent.", true)
                 .setMinValue(1)
-                .setMaxValue(9999999L));
+                .setMaxValue(99999999L));
         return data;
     }
 

@@ -32,14 +32,17 @@ public class Avatar implements ICommand {
         try {
             OptionMapping user = event.getOption("user");
             assert user != null;
+
             // The mentioned
             String avatar = Objects.requireNonNull(user.getAsUser()).getAvatarUrl();
             String name = user.getAsUser().getEffectiveName();
+
             // Build Embed
             EmbedBuilder builder = new EmbedBuilder()
                     .setTitle(name)
                     .setImage(avatar)
                     .setColor(Color.decode(String.valueOf(Objects.requireNonNull(user.getAsMember()).getColorRaw())));
+
             event.replyEmbeds(builder.build()).queue();
         } catch (Exception e) {
             event.reply("An error occured while fetching their photo! Please try again.").setEphemeral(true).queue();

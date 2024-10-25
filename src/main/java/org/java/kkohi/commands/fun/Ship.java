@@ -41,12 +41,16 @@ public class Ship implements ICommand {
             String shipOne = userOne.getAsMember().getAsMention();
             String shipTwo = userTwo.getAsMember().getAsMention();
 
+            // Generate a number from 1-100
             RandomGenerator randomGenerator = new Random();
-
             int randNum = randomGenerator.nextInt(1, 100);
+
+            // do not fight us
             if ((userOne.getAsMember().getIdLong() == 583328224491208863L ) && (userTwo.getAsMember().getIdLong() == 870321446428229632L)){
                 randNum = 100;
             }
+
+            // Select a splash text based on percentage
             String splashText;
             if (randNum >= 50){
                 splashText = "Almost there, lovebirds!";
@@ -55,8 +59,8 @@ public class Ship implements ICommand {
             } if (randNum == 100){
                 splashText = "Get married!";
             }
-            event.reply(shipOne + " and " + shipTwo + " are " + randNum + "% compatible! " + splashText).queue();
 
+            event.reply(shipOne + " and " + shipTwo + " are " + randNum + "% compatible! " + splashText).queue();
         } catch (Exception e) {
             event.reply("Love finds a way to challenge destiny, but not today...").queue();
             throw new RuntimeException(e);

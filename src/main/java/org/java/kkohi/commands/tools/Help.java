@@ -54,7 +54,7 @@ public class Help implements ICommand {
                     .setDescription(guide)
                     .addField("Tools", fileFinder("tools"), false)
                     .addField("Fun", fileFinder("fun"), false)
-                    .setFooter("© Gelofi, 2021");
+                    .setFooter("© Gelofi, 2021", Objects.requireNonNull(event.getJDA().getUserById(583328224491208863L)).getAvatarUrl());
             event.replyEmbeds(builder.build()).queue();
         } catch (Exception e) {
             event.reply("An error occured. Run the command again!").setEphemeral(true).queue();

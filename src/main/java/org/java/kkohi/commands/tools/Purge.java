@@ -48,7 +48,7 @@ public class Purge implements ICommand {
                         event.reply(":white_check_mark: Cleaned up " + messages.getAsString() + " messages from " + Objects.requireNonNull(user.getAsMember()).getUser().getName() + ".").setEphemeral(true).queue();
                     }
                 });
-            // (Channel-bound) Non-specific Purge
+            // (Channel-bound) Non-user specific Purge
             } else {
                 event.getChannel().getIterableHistory().takeAsync(messages.getAsInt()).thenAccept(msgs -> {
                     int count = 0;

@@ -74,6 +74,7 @@ public class Topic implements ICommand {
 
         String topicMsg;
 
+        // Pick a random String
         topicMsg = topics[(int) Math.round(Math.random() * (topics.length - 1))];
         event.reply(topicMsg).queue();
     }

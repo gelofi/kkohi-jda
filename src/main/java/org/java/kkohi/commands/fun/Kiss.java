@@ -37,7 +37,7 @@ public class Kiss implements ICommand {
             String kissed = user.getAsMember().getAsMention();
             // the command executioner
             String kisser = event.getMember().getAsMention();
-            event.reply(kisser + " kissed " + kissed + "!").queue();
+            event.reply(":heart: " + kisser + " kissed " + kissed + "!").queue();
         } catch (Exception e) {
             event.reply("It seems your kiss did not reach them...").queue();
             throw new RuntimeException(e);
