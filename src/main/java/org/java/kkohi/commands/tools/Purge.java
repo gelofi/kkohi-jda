@@ -52,7 +52,7 @@ public class Purge implements ICommand {
                     }
                 });
             // (Channel-bound) Non-specific Purge
-            } else if (user == null) {
+            } else {
                 event.getChannel().getIterableHistory().takeAsync(messages.getAsInt()).thenAccept(msgs -> {
                     int count = 0;
                     for (Message msg : msgs) {
