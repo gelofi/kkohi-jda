@@ -45,3 +45,5 @@ bin/
 ### Private Files ###
 /src/main/java/org/java/kkohi/Token.java
 /src/main/java/org/java/kkohi/Keys.java
+/.idea/
+/gradle/
