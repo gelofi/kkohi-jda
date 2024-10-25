@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Arithmetic implements ICommand {
-    private static final Logger log = LoggerFactory.getLogger(Arithmetic.class);
+public class Calculate implements ICommand {
+    private static final Logger log = LoggerFactory.getLogger(Calculate.class);
 
     @Override
     public String getName() {
-        return "math";
+        return "calculate";
     }
 
     @Override

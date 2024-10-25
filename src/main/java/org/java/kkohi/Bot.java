@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import org.java.kkohi.commands.fun.Kiss;
 import org.java.kkohi.commands.fun.Ship;
 import org.java.kkohi.commands.fun.Topic;
-import org.java.kkohi.commands.tools.Arithmetic;
+import org.java.kkohi.commands.tools.Calculate;
 import org.java.kkohi.commands.tools.Help;
 import org.java.kkohi.commands.tools.Ping;
 import org.java.kkohi.commands.tools.Purge;
@@ -26,7 +26,7 @@ public class Bot {
         // Tool Commands
         manager.add(new Help());
         manager.add(new Ping());
-        manager.add(new Arithmetic());
+        manager.add(new Calculate());
         manager.add(new Purge());
 
         // Fun Commands
