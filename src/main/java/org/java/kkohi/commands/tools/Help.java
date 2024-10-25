@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.java.kkohi.ICommand;
+import org.java.kkohi.Keys;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -47,11 +48,11 @@ public class Help implements ICommand {
                 To view the source-code, click Kkohi.""";
 
         EmbedBuilder builder = new EmbedBuilder()
-                .setAuthor("Kkohi 1.2.0", "https://github.com/gelofi/kkohi-jda", event.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Kkohi " + Keys.VERSION, "https://github.com/gelofi/kkohi-jda", event.getJDA().getSelfUser().getAvatarUrl())
                 .setColor(Color.decode("#F2CDA6"))
                 .setDescription(guide)
-                .addField("Tool Commands", fileFinder("tools"), false)
-                .addField("Fun Commands", fileFinder("fun"), false)
+                .addField("Tools", fileFinder("tools"), false)
+                .addField("Fun", fileFinder("fun"), false)
                 .setFooter("© Gelofi, 2021");
         event.replyEmbeds(builder.build()).queue();
     }

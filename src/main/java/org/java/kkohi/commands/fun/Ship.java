@@ -14,6 +14,7 @@ import java.util.Random;
 import java.util.random.RandomGenerator;
 
 public class Ship implements ICommand {
+
     private static final Logger log = LoggerFactory.getLogger(Ship.class);
 
     @Override
@@ -37,8 +38,7 @@ public class Ship implements ICommand {
     @Override
     public void execute(SlashCommandInteractionEvent event) {
         try {
-            OptionMapping userOne = event.getOption("user_one");
-            OptionMapping userTwo = event.getOption("user_two");
+            OptionMapping userOne = event.getOption("user_one"), userTwo = event.getOption("user_two");
             assert userOne != null;
             assert userTwo != null;
             // the mentioned
