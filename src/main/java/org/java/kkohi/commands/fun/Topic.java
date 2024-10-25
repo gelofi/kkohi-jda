@@ -7,6 +7,7 @@ import org.java.kkohi.ICommand;
 import java.util.List;
 
 public class Topic implements ICommand {
+
     @Override
     public String getName() {
         return "topic";

@@ -5,14 +5,11 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.java.kkohi.ICommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Kiss implements ICommand {
-    private static final Logger log = LoggerFactory.getLogger(Kiss.class);
 
     @Override
     public String getName() {
@@ -42,8 +39,8 @@ public class Kiss implements ICommand {
             String kisser = event.getMember().getAsMention();
             event.reply(kisser + " kissed " + kissed + "!").queue();
         } catch (Exception e) {
-            log.error("e: ", e);
             event.reply("It seems your kiss did not reach them...").queue();
+            throw new RuntimeException(e);
         }
 
     }

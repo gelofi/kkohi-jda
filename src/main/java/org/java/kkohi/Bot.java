@@ -7,10 +7,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import org.java.kkohi.commands.fun.Kiss;
 import org.java.kkohi.commands.fun.Ship;
 import org.java.kkohi.commands.fun.Topic;
-import org.java.kkohi.commands.tools.Calculate;
-import org.java.kkohi.commands.tools.Help;
-import org.java.kkohi.commands.tools.Ping;
-import org.java.kkohi.commands.tools.Purge;
+import org.java.kkohi.commands.tools.*;
 
 public class Bot {
     public static void main(String[] args) {
@@ -28,6 +25,7 @@ public class Bot {
         manager.add(new Ping());
         manager.add(new Calculate());
         manager.add(new Purge());
+        manager.add(new Avatar());
 
         // Fun Commands
         manager.add(new Ship());

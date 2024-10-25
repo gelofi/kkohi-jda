@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Help implements ICommand {
+
     @Override
     public String getName() { return "help"; }
 
@@ -40,20 +41,25 @@ public class Help implements ICommand {
 
     @Override
     public void execute(@NotNull SlashCommandInteractionEvent event) {
-
-        String guide = """
+        try {
+            String guide = """
                 # Guide to use [Kkohi](https://github.com/gelofi/kkohi-jda)
                 Kkohi is your coffee-oriented bot for all-around server work!
                 Type `/` to begin using commands.
                 To view the source-code, click Kkohi.""";
 
-        EmbedBuilder builder = new EmbedBuilder()
-                .setAuthor("Kkohi " + Keys.VERSION, "https://github.com/gelofi/kkohi-jda", event.getJDA().getSelfUser().getAvatarUrl())
-                .setColor(Color.decode("#F2CDA6"))
-                .setDescription(guide)
-                .addField("Tools", fileFinder("tools"), false)
-                .addField("Fun", fileFinder("fun"), false)
-                .setFooter("© Gelofi, 2021");
-        event.replyEmbeds(builder.build()).queue();
+            EmbedBuilder builder = new EmbedBuilder()
+                    .setAuthor("Kkohi " + Keys.VERSION, "https://github.com/gelofi/kkohi-jda", event.getJDA().getSelfUser().getAvatarUrl())
+                    .setColor(Color.decode("#F2CDA6"))
+                    .setDescription(guide)
+                    .addField("Tools", fileFinder("tools"), false)
+                    .addField("Fun", fileFinder("fun"), false)
+                    .setFooter("© Gelofi, 2021");
+            event.replyEmbeds(builder.build()).queue();
+        } catch (Exception e) {
+            event.reply("An error occured. Run the command again!").setEphemeral(true).queue();
+            throw new RuntimeException(e);
+        }
+
     }
 }

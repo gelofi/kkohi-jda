@@ -6,15 +6,12 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.java.kkohi.ICommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Purge implements ICommand {
-    private static final Logger log = LoggerFactory.getLogger(Purge.class);
 
     @Override
     public String getName() { return "purge"; }
@@ -66,8 +63,8 @@ public class Purge implements ICommand {
                 });
             }
         } catch (Exception e){
-            log.error("e: ", e);
             event.reply("An error occured processing the purge! Please try again.").setEphemeral(true).queue();
+            throw new RuntimeException(e);
         }
     }
 }

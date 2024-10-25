@@ -5,8 +5,6 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.java.kkohi.ICommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigInteger;
 import java.text.DecimalFormat;
@@ -16,7 +14,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Calculate implements ICommand {
-    private static final Logger log = LoggerFactory.getLogger(Calculate.class);
 
     @Override
     public String getName() {
@@ -77,8 +74,8 @@ public class Calculate implements ICommand {
             if (Objects.requireNonNull(operation).getAsString().equals("^")) return;
             event.reply(firstN + " " + operation.getAsString() + " " + secondN + " = " + result).queue();
         } catch (Exception e){
-            log.error("e: ", e);
             event.reply("An error occured. Did you insert correct values?").setEphemeral(true).queue();
+            throw new RuntimeException(e);
         }
     }
 }

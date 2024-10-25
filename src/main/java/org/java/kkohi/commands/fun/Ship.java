@@ -5,8 +5,6 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.java.kkohi.ICommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +12,6 @@ import java.util.Random;
 import java.util.random.RandomGenerator;
 
 public class Ship implements ICommand {
-
-    private static final Logger log = LoggerFactory.getLogger(Ship.class);
 
     @Override
     public String getName() {
@@ -62,8 +58,8 @@ public class Ship implements ICommand {
             event.reply(shipOne + " and " + shipTwo + " are " + randNum + "% compatible! " + splashText).queue();
 
         } catch (Exception e) {
-            log.error("e: ", e);
             event.reply("Love finds a way to challenge destiny, but not today...").queue();
+            throw new RuntimeException(e);
         }
 
     }
