@@ -38,6 +38,7 @@ public class CommandManager extends ListenerAdapter {
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event){
         for(ICommand commands : commands){
             if (commands.getName().equals(event.getName())){
+                event.getChannel().sendTyping().queue(); // simulate typing
                 commands.execute(event);
                 return;
             }

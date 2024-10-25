@@ -37,6 +37,7 @@ public class Listeners extends ListenerAdapter {
         if(event.getAuthor().isBot()) return; // ignore bot messages
         if(event.getChannelType().isGuild()) return; // make it only work for DMs
         MessageChannel channel = event.getChannel();
+        channel.sendTyping().queue(); // simulate typing
         channel.sendMessage("hello pi,,").queue();
         super.onMessageReceived(event);
     }

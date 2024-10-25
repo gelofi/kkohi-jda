@@ -4,9 +4,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
 // Import Commands
-import org.java.kkohi.commands.fun.Kiss;
-import org.java.kkohi.commands.fun.Ship;
-import org.java.kkohi.commands.fun.Topic;
+import org.java.kkohi.commands.fun.*;
 import org.java.kkohi.commands.tools.*;
 
 public class Bot {
@@ -26,12 +24,12 @@ public class Bot {
         manager.add(new Calculate());
         manager.add(new Purge());
         manager.add(new Avatar());
+        manager.add(new Info());
 
         // Fun Commands
         manager.add(new Ship());
         manager.add(new Kiss());
         manager.add(new Topic());
-
 
         // Execute the Manager
         jda.addEventListener(manager);
