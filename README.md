@@ -11,6 +11,7 @@ public class Keys {
 }
 ```
 
+Your token is a `special key`, do not share it with anyone and include it in the `.gitignore` file.
 
 # kkohi-cs
 For Kkohi in CoffeeScript, please check out https://github.com/gelofi/kkohi.
