@@ -30,6 +30,7 @@ public class Bot {
         manager.add(new Ship());
         manager.add(new Kiss());
         manager.add(new Topic());
+        manager.add(new Pinned());
 
         // Execute the Manager
         jda.addEventListener(manager);
